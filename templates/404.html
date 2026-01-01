@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 Not Found</title>
+    <style>
+      body {
+        background: linear-gradient(135deg, #fffbe6 0%, #ffe082 100%);
+        font-family: 'Playfair Display', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #212529;
+        text-align: center;
+        padding: 60px 20px;
+      }
+      .container {
+        max-width: 500px;
+        margin: auto;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 16px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        padding: 40px 30px;
+      }
+      .emoji {
+        font-size: 5rem;
+        margin-bottom: 20px;
+        animation: float 2s infinite ease-in-out;
+      }
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        color: #ff9800;
+        font-family: 'Playfair Display', serif;
+      }
+      p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        color: #727272;
+      }
+      a {
+        display: inline-block;
+        padding: 12px 28px;
+        background: #ffc107;
+        color: #212529;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background 0.2s;
+        border: 2px solid transparent;
+      }
+      a:hover {
+        background: #ff9800;
+        border-color: #ffc107;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="emoji">🧭</div>
+      <h1>404 - Lost in Space</h1>
+      <p>
+        Oops! The page you’re looking for has drifted off into the unknown.<br />
+        Maybe it never existed, or maybe it’s just hiding from you.
+      </p>
+      <a href="{% url 'home' %}">Beam Me Home</a>
+    </div>
+  </body>
+</html>

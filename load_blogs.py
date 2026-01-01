@@ -3,13 +3,14 @@ from django.contrib.auth.models import User
 import re
 from django.utils.text import slugify
 # how to run:  python manage.py shell < blogsapp/load_blogs.py
-usernames = [
-    "john_doe", "mia_traveler", "chef_ava", "dev_raj", "dr_lisa", "eco_emma"
-]
-for username in usernames:
-    user, created = User.objects.get_or_create(username=username, defaults={"password": "pbkdf2_sha256$260000$dummy$dummy"})
-    if created:
-        print(f"Created user: {username}")
+#  python manage.py shell < load_blogs.py
+# usernames = [
+#     "john_doe", "mia_traveler", "chef_ava", "dev_raj", "dr_lisa", "eco_emma"
+# ]
+# for username in usernames:
+#     user, created = User.objects.get_or_create(username=username, defaults={"password": "pbkdf2_sha256$260000$dummy$dummy"})
+#     if created:
+#         print(f"Created user: {username}")
 
 def get_category(name):
     return Category.objects.get_or_create(category_name=name)[0]
@@ -100,12 +101,16 @@ blogs_data = [
     },
 ]
 
+# Set the username for all blogs
+all_blogs_author = "sadid"
+author_user = get_user(all_blogs_author)
+
 for data in blogs_data:
     blog = Blog.objects.create(
         title=data["title"],
         slug=get_unique_slug(data["title"]),
         category=get_category(data["category"]),
-        author=get_user(data["author"]),
+        author=author_user,  # Use the same user for all blogs
         short_description=data["short_description"],
         blog_body=data["blog_body"],
         status=data["status"],
