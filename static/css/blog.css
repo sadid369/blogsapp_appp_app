@@ -67,3 +67,14 @@ h1, h2, h3, h4, h5, h6 {
 .blog-footer p:last-child {
   margin-bottom: 0;
 }
+
+/* footer styles */
+.site-footer {
+  background: #1f2937; /* darker, neutral background */
+  color: #cbd5e1;
+}
+.site-footer a { color: #f8f9fa; text-decoration: none; }
+.site-footer .text-muted { color: #9aa3ad; }
+.footer-author-link { color: #ffc107; font-weight: 600; }
+.footer-author-link:hover { color: #ffd454; text-decoration: underline; }
+.footer-social svg { fill: currentColor; width: 20px; height: 20px; opacity: 0.9; }
