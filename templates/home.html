@@ -15,7 +15,7 @@
           <h1 class="display-4 font-italic">{{ post.title }}</h1>
           <p class="lead my-3">{{ post.short_description|truncatewords:'8' }}</p>
           <p class="lead mb-0">
-            <a href="#" class="text-white font-weight-bold">Continue reading...</a>
+            <a href="{% url 'blogs' post.slug %}" class="text-white font-weight-bold">Continue reading...</a>
           </p>
         </div>
       </div>
@@ -29,7 +29,7 @@
         <div class="col-md-6">
           <div class="card border-0">
             <div class="card-body">
-              <h3>{{ post.title }}</h3>
+              <h3><a href="{% url 'blogs' post.slug %}">{{ post.title }}</a></h3>
               {% comment %} <small class="mb-1 text-muted">{{ post.created_at|date:'M d, Y' }} | {{ post.author.username }}</small> {% endcomment %}
               <small class="mb-1 text-muted">{{ post.created_at|timesince }} ago | {{ post.author.username }}</small>
               <p class="card-text">{{ post.short_description|truncatewords:'25' }}</p>
@@ -47,7 +47,7 @@
         {% for post in posts %}
           <div class="card border-0">
             <div class="card-body">
-              <h3>{{ post.title }}</h3>
+              <h3><a href="{% url 'blogs' post.slug %}">{{ post.title }}</a></h3>
               {% comment %} <small class="mb-1 text-muted">{{ post.created_at|date:'M d, Y' }} | {{ post.author.username }}</small> {% endcomment %}
               <small class="mb-1 text-muted">{{ post.created_at|timesince }} ago | {{ post.author.username }}</small>
               <p class="card-text">{{ post.short_description|truncatechars:'10' }}</p>

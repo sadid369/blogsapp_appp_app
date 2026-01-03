@@ -1,5 +1,8 @@
 /* stylelint-disable selector-list-comma-newline-after */
-
+a {
+  text-decoration: none;
+  background-color: transparent;
+}
 .blog-header {
   border-bottom: 1px solid #e5e5e5;
 }
